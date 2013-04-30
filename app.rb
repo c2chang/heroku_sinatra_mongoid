@@ -3,16 +3,17 @@ require 'sinatra'
 require 'mongoid'
 
 load 'coder.rb'
-
-host = "dsxxxxxx.mongolab.com:xxxxx"
-db = "heroku_appxxxxxx"
-dbuser = "heroku_appxxxxxx"
-dbpass = "xxxxxxxxxxxxxxx"
-
+=begin
 configure do
   Mongoid.configure do |config|
-    config.sessions = {:default => {:hosts => ["ds061767.mongolab.com:61767"], :database => "heroku_app15392573", :username => "c2chang", :password => "tamader"}}
+    config.sessions = {:default =>  {:hosts => ["ds061767.mongolab.com:61767"], :database => "heroku_app15392573", :username => "heroku_app15392573", :password => "uredidq4ub5ud4c136vjb4jpg7"}}
   end
+end
+=end
+
+configure :development do
+  enable :logging, :dump_errors, :run, :sessions
+  Mongoid.load!(File.join(File.dirname(__FILE__), "config", "mongoid.yml"))
 end
 
 get '/' do
