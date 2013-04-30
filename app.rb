@@ -1,5 +1,5 @@
 #app.rb
-require 'sinatra'
+require 'sinatra/base'
 require 'mongoid'
 
 load 'coder.rb'
