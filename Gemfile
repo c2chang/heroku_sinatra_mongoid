@@ -4,3 +4,9 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'mongoid'
+gem 'mongo'
+
+group :development do
+  gem 'shotgun'
+  gem 'tux'
+end
