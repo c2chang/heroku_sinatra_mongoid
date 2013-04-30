@@ -11,7 +11,7 @@ dbpass = "xxxxxxxxxxxxxxx"
 
 configure do
   Mongoid.configure do |config|
-    config.sessions = {:default => {:hosts => ["ds061767.mongolab.com:61767"], :database => "heroku_app15392573", :username => "heroku_app15392573", :password => "turedidq4ub5ud4c136vjb4jpg7"}}
+    config.sessions = {:default => {:hosts => ["ds061767.mongolab.com:61767"], :database => "heroku_app15392573", :username => "c2chang", :password => "tamader"}}
   end
 end
 
