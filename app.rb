@@ -1,19 +1,21 @@
 #app.rb
-require 'sinatra/base'
+require 'sinatra'
 require 'mongoid'
 
 load 'coder.rb'
 =begin
 configure do
   Mongoid.configure do |config|
-    config.sessions = {:default =>  {:hosts => ["ds061767.mongolab.com:61767"], :database => "heroku_app15392573", :username => "heroku_app15392573", :password => "uredidq4ub5ud4c136vjb4jpg7"}}
+    config.sessions = {:default =>  {:hosts => ["dbh85.mongolab.com:27857"], :database => "mongotwitter", :username => "c2chang", :password => "tamader9"}}
   end
 end
 =end
 
 configure :development do
   enable :logging, :dump_errors, :run, :sessions
-  Mongoid.load!(File.join(File.dirname(__FILE__), "config", "mongoid.yml"))
+  #Mongoid.load!(File.join(File.dirname(__FILE__), "config", "mongoid.yml"))
+  puts File.join(File.dirname(__FILE__), "mongoid.yml") 
+  Mongoid.load!(File.join(File.dirname(__FILE__), "mongoid.yml"))
 end
 
 get '/' do
