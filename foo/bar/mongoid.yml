@@ -1,5 +1,0 @@
-development:
-  sessions:
-    default:
-      uri: mongodb://heroku_app15392573:uredidq4ub5ud4c136vjb4jpg7@ds061767.mongolab.com:61767/heroku_app15392573
-
