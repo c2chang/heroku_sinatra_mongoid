@@ -1,12 +1,12 @@
 development:
   sessions:
     default:
-      uri: mongodb://c2chang:tamader9@dbh85.mongolab.com:27857/mongotwitter
+      #uri: mongodb://c2chang:tamader9@dbh85.mongolab.com:27857/mongotwitter
       #mongodb://heroku_app15392573:uredidq4ub5ud4c136vjb4jpg7@ds061767.mongolab.com:61767/heroku_app15392573
-      #hosts: 
-      #  - dbh85.mongolab.com:27857  
-      #database: mongotwitter
-      #username: c2chang
-      #password: tamader9
+      hosts:
+        - ds061767.mongolab.com 
+#        - dbh85.mongolab.com:27857  
+      database: heroku_app15392573 #mongotwitter heroku_app15392573 
+      username: heroku_app15392573 #c2chang 
+      password: uredidq4ub5ud4c136vjb4jpg7 #tamader9  
 #uri: <%= ENV['mongodb://heroku_app15392573:uredidq4ub5ud4c136vjb4jpg7@ds061767.mongolab.com:61767/heroku_app15392573'] %>
-

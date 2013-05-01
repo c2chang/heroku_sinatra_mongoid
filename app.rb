@@ -11,16 +11,24 @@ configure do
 end
 =end
 
+puts File.join(File.dirname(__FILE__), "mongoid.yml") 
+Mongoid.load!(File.join(File.dirname(__FILE__), "mongoid.yml"))
+
+=begin
 configure :development do
   enable :logging, :dump_errors, :run, :sessions
   #Mongoid.load!(File.join(File.dirname(__FILE__), "config", "mongoid.yml"))
   puts File.join(File.dirname(__FILE__), "mongoid.yml") 
   Mongoid.load!(File.join(File.dirname(__FILE__), "mongoid.yml"))
 end
+=end
 
 get '/' do
+  puts 'executing'
   coder = Coder.new(:name => "Chris", :age => 22, :languages => ["Ruby","MongoDB"])
+  puts 'stuck'
   coder.save
+  puts 'not stuck'
   ret = Coder.all.to_a
   name = '', age = '', langList = '', langs = ''
   ret.each {|x| full = x, name = x['name'], age = x['age'], langList = x['languages']} 
