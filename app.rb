@@ -2,21 +2,24 @@
 require 'sinatra'
 require 'mongoid'
 
-#load your models
+#Models
 load 'coder.rb'
 
-#Depending on where your mongoid.yml file resides, you may want to add ,"config" afterthe File.dirname(__FILE__) parameter
-Mongoid.load!(File.join(File.dirname(__FILE__), "mongoid.yml"))
+#Loads the mongoid.yml file in your config directory
+Mongoid.load!(File.join(File.dirname(__FILE__), "config", "mongoid.yml"))
 
 
 get '/' do
+  #Create new coder document and save to database
   coder = Coder.new(:name => "Chris", :age => 22, :languages => ["Ruby","MongoDB"])
   coder.save
-  #Put resulting cursor into an array
+  #Put query results  into an array
   ret = Coder.all.to_a
-  name = '', age = '', langList = '', langs = ''
-  ret.each {|x| full = x, name = x['name'], age = x['age'], langList = x['languages']}
-  #<< changes the string in place- cool! 
-  langList.each {|x| langs << "#{x} "} 
+  #Take document from cursor
+  x = ret[0]
+  name = x['name']
+  age = x['age']
+  langList = x['languages'] 
+  langList.each {|l| langs << "#{l} "} 
   "Hi my name is #{name}, I'm #{age} years young and I hack in #{langs}"
 end
