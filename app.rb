@@ -19,7 +19,8 @@ get '/' do
   x = ret[0]
   name = x['name']
   age = x['age']
-  langList = x['languages'] 
+  langList = x['languages']
+  langs = '' 
   langList.each {|l| langs << "#{l} "} 
   "Hi my name is #{name}, I'm #{age} years young and I hack in #{langs}"
 end
