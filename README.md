@@ -5,9 +5,9 @@ Short tutorial for getting started on Heroku utilizing Sinatra and Mongoid.
 
 Just type the following to execute:
     
-    ruby app.rb
+    heroku open
     
-Note: you must add the MongoLab addon (heroku addons:add mongolab) to use the uri variable in mongoid.yml.
+Note: you must add the MongoLab addon (heroku addons:add mongolab) to use the URI variable in mongoid.yml.
 
 Documentation: [MongoLab on Heroku](https://devcenter.heroku.com/articles/mongolab) and [Mongoid](http://mongoid.org/en/mongoid/docs/installation.html).
 
